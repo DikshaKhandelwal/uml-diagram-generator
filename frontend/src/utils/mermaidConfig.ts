@@ -102,38 +102,38 @@ export const getDiagramTemplate = (type: DiagramType): string => {
   switch (type) {
     case 'class':
       return `classDiagram
-    class User {
-        +String id
-        +String username
-        +String email
-        -String password
-        #Date lastLogin
-        +login(String password)
-        +logout()
-        +updateProfile(Profile profile)
-    }
-    class Profile {
-        +String userId
-        +String fullName
-        +String avatar
-        +updateAvatar(String url)
-    }
-    User "1" -- "1" Profile : has
-    User "1" *-- "*" Order : places`;
+        class User {
+            +String id
+            +String username
+            +String email
+            -String password
+            #Date lastLogin
+            +login(String password)
+            +logout()
+            +updateProfile(Profile profile)
+        }
+        class Profile {
+            +String userId
+            +String fullName
+            +String avatar
+            +updateAvatar(String url)
+        }
+        User "1" -- "1" Profile : has
+        User "1" *-- "*" Order : places`;
     
     case 'sequence':
       return `sequenceDiagram
-    actor User
-    participant Frontend
-    participant API
-    participant Database
-    
-    User->>Frontend: Request page
-    Frontend->>API: Fetch data
-    API->>Database: Query
-    Database-->>API: Return results
-    API-->>Frontend: Return data
-    Frontend-->>User: Display page`;
+        actor User
+        participant Frontend
+        participant API
+        participant Database
+        
+        User->>Frontend: Request page
+        Frontend->>API: Fetch data
+        API->>Database: Query
+        Database-->>API: Return results
+        API-->>Frontend: Return data
+        Frontend-->>User: Display page`;
     
     case 'activity':
       return `flowchart TD
