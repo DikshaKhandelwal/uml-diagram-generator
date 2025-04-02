@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { getMessage } from "./utils/api";
+import getMessage from "./utils/api";
 
 function App() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    getMessage().then((data) => setMessage(data.message));
+    getMessage({}).then((response) => setMessage(response.data.message));
   }, []);
 
   return <h1>{message}</h1>;
